@@ -20,11 +20,13 @@ public class Merchant {
     @Column(name = "merchant_id")
     private Long merchantId;
 
+    @Column(name = "shop_name")
     private String shopName;
 
+    @Column(name = "owner_name")
     private String ownerName;
 
-    @Column(unique = true)
+    @Column(unique = true, name = "merchant_registration_number")
     private String merchantRegistrationNumber;
 
     @ManyToMany

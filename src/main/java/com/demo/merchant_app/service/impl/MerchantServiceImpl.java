@@ -35,7 +35,6 @@ public class MerchantServiceImpl implements MerchantService {
         if (merchantRepository.existsByMerchantRegistrationNumber(merchantRequestDTO.getMerchantRegistrationNumber())) {
             throw new ApiException("Registration Number Already Exists");
         }
-
         Set<Category> categories = new HashSet<>();
         for (Long categoryId : merchantRequestDTO.getCategoryIds()) {
             Category category = categoryRepository.findById(categoryId)
